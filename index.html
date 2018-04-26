@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" href="testnvstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="testnvjs.js"></script> 
+	</head>
+  <body>
+    <div id="grid-item-color-div" style="font-size: 0">
+        <button type="button" id="close-grid-item-color-div"><i class="fa fa-close fa-2x"></i></button>
+        <span class="grid-item-color-option" style="background-color: #888888;"></span>
+        <span class="grid-item-color-option" style="background-color: #d0baca;"></span>
+        <span class="grid-item-color-option" style="background-color: #a57b99;"></span>
+        <span class="grid-item-color-option" style="background-color: #b26a6a;"></span>
+        <span class="grid-item-color-option" style="background-color: #7bb280;"></span>
+        <br>
+        <span class="grid-item-color-option" style="background-color: #7db5ac;"></span>
+        <span class="grid-item-color-option" style="background-color: #7d97b5;"></span>
+        <span class="grid-item-color-option" style="background-color: #7c79ac;"></span>
+        <span class="grid-item-color-option" style="background-color: #788bc9;"></span>
+        <span class="grid-item-color-option" style="background-color: #a9a268;"></span>
+        <br>
+        <span class="grid-item-color-option" style="background-color: #837171;"></span>
+        <span class="grid-item-color-option" style="background-color: #4f5463;"></span>
+        <span class="grid-item-color-option" style="background-color: #ce9898;"></span>
+        <span class="grid-item-color-option" style="background-color: #6a5599;"></span>
+        <span class="grid-item-color-option" style="background-color: #4b726b;"></span>
+    </div>
+    <div class="menu">
+      <div class="menu-content" id="menu-id">
+        <div id="create-div">
+          <label for="time-zone-select">Time-zone:</label>
+          <div id="time-zone-input-div">
+            <input list="time-zone-select" id="time-zone-input">
+            <span class="fa fa-angle-down "></span>
+          </div>
+          <datalist id="time-zone-select">
+          </datalist>
+        </div>
+        <div>
+          <span id="color-chosen" style="background-color: #888888;"></span>
+          <div id="color-div" style="font-size: 0">
+            <br>
+            <span class="color-option" style="background-color: #888888;"></span>
+            <span class="color-option" style="background-color: #d0baca;"></span>
+            <span class="color-option" style="background-color: #a57b99;"></span>
+            <span class="color-option" style="background-color: #b26a6a;"></span>
+            <span class="color-option" style="background-color: #7bb280;"></span>
+            <br>
+            <span class="color-option" style="background-color: #7db5ac;"></span>
+            <span class="color-option" style="background-color: #7d97b5;"></span>
+            <span class="color-option" style="background-color: #7c79ac;"></span>
+            <span class="color-option" style="background-color: #788bc9;"></span>
+            <span class="color-option" style="background-color: #a9a268;"></span>
+            <br>
+            <span class="color-option" style="background-color: #837171;"></span>
+            <span class="color-option" style="background-color: #4f5463;"></span>
+            <span class="color-option" style="background-color: #ce9898;"></span>
+            <span class="color-option" style="background-color: #6a5599;"></span>
+            <span class="color-option" style="background-color: #4b726b;"></span>
+          </div>
+        </div>
+        <button type="button" id="create-item-btn">New</button>
+        <br>
+        <hr>
+        <div id="settings-div">
+          <div class="settings-item">
+          <label for="month-text-id">Display month as text:</label>
+          <input type="checkbox" id="month-text-id">
+          </div>
+          
+          <div class="settings-item">
+          <label for="hide-date-id">Hide date:</label>
+          <input type="checkbox" id="hide-date-id">
+          </div>
+          
+          <div class="settings-item">
+          <label for="meridiem-id">12-hour clock:</label>
+          <input type="checkbox" id="meridiem-id">
+          </div>
+
+          <div class="settings-item">
+          <label for="format-select">Date format:</label>
+          <select id="format-select">
+            <option value="DDMMYYYY">DDMMYYYY</option>
+            <option value="MMDDYYYY">MMDDYYYY</option>
+            <option value="YYYYMMDD">YYYYMMDD</option>
+          </select>
+          </div>
+        </div>
+      </div>
+      <button type="button" id="open-menu-btn"><i id="btn-icon" class="fa fa-chevron-right fa-2x"></i></button>
+    </div>
+    <div id="grid-container"></div>
+  </body>
+</html>

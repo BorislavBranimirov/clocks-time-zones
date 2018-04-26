@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --grid-items-height: 95vh;
+  --clock-font-size: 8vmax;
+  --clock-font-size-temp: 5rem;
+}
+body {
+  background-color: #222222;
+}
+#grid-container {
+  display: grid;
+  grid-gap: 15px;
+  /*auto-fit not fill so if there's one element - it takes whole width of screen, two el - half, three - 1/3*/
+  /*grid items can't take less than 30% of screen, but can be as wide as whole screen*/
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); /*if you change this value, change function gridItemsHeightFix as well*/
+  padding: 10px;
+}
+.grid-item {
+  background-color: #888888;
+  border-radius: 3%;
+  box-shadow: 5px 5px 10px black, 5px 5px 20px white inset;
+  color: #ffffff;
+  font-family: courier;
+  font-weight: bold;
+  height: var(--grid-items-height);
+  text-align: center;
+  text-shadow: 2px 1px black;
+  position: relative;
+}
+.grid-item-btn {
+  border-radius: 50%;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-size: 25px;
+}
+
+.grid-item-color-btn {
+  border-radius: 50%;
+  position: absolute;
+  border: 2px solid black;
+  top: 2%;
+  left: 2%;
+  font-size: 25px;
+}
+
+.grid-item-color-btn:hover {
+  opacity: 0.5;
+}
+
+#grid-item-color-div {
+  background-color: #ddd;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 320px;
+  height: 180px;
+  z-index: 3;
+  padding: 15px;
+  border-radius: 0% 30% 0% 0%;
+  box-shadow: 1px -1px 20px black;
+  display: none;/*set in js setting function;*/
+}
+
+#close-grid-item-color-div {
+  float: left;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  height: 160px;
+  width: 40px;
+}
+
+.grid-item-color-option {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 50%;/*50%*/
+}
+
+.grid-item-color-option:hover {
+  opacity: 0.5;
+}
+
+.clock {
+  font-size: var(--clock-font-size-temp);/*--clock-font-size);*/
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  height: 50px;
+}
+#open-menu-btn {
+  border-radius: 0% 0% 50% 0%;
+  height: inherit;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+#create-item-btn {
+  position: absolute;
+  z-index: 2;
+  width: 250px;
+}
+#time-zone-input-div {
+  position: relative;
+}
+#time-zone-input-div .fa-angle-down {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
+#time-zone-input {
+  width: 250px;
+}
+input::-webkit-calendar-picker-indicator {
+  visibility: hidden;
+}
+#color-chosen {
+  width: 250px;
+  height: 30px;
+  margin: 10px 0 0 0;
+  background-color: #888888;
+  display: inline-block;
+  border: 1px solid darkgray;
+  border-radius: 0%;
+}
+
+#color-div {
+  display: none;/*set in js setting function;*/
+}
+
+.color-option {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 10%;
+}
+
+.color-option:hover {
+  opacity: 0.5;
+}
+
+.menu {
+  position: fixed;
+}
+
+.menu-content {
+  background-color: #ddd;
+  display: none;
+  padding: 20px 60px;
+  position: absolute;
+  border-radius: 0% 0% 30% 0%;
+  box-shadow: -1px 1px 20px black;
+}
+.show {
+  display: block;
+}
+@media (max-width: 600px) {
+  #grid-container {
+    grid-template-columns: 1fr;
+  }
+}
